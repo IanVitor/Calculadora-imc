@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(to right, #2848d6, #4761d4);
+}
+
+main {
+    max-width: 600px;
+    background-color: white;
+    margin: auto;
+    height: 100vh;
+}
+
+header {
+    background-color: #353434;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+}
+
+#container {
+    background-color: rgb(245, 176, 27);
+    width: 50%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+    padding: 10px;
+}
+
+#texto {
+    width: 50%;
+    margin: auto;
+    text-align: justify;
+    margin-bottom: 100px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#texto > h2 {
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.input > label {
+    margin: 5px;
+}
+
+.input> input {
+    margin: 5px;
+}
+
+#nome {
+    margin-left: 6px;
+}
+
+#peso {
+    margin-left: 15px;
+}
+
+#calcular {
+    margin: auto;
+    display: block;
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+}
+
+#resultado {
+    background-color: black;
+    color: white;
+    height: 100px;
+    padding: 5px;
+    text-align: justify;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
