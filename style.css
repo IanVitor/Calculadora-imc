@@ -13,7 +13,8 @@ main {
     max-width: 600px;
     background-color: white;
     margin: auto;
-    height: 100vh;
+    height: 100%;
+    padding-bottom: 50px;
 }
 
 header {
@@ -26,11 +27,17 @@ header {
 
 #container {
     background-color: rgb(245, 176, 27);
-    width: 50%;
+    max-width: 300px;
     margin: auto;
     border-radius: 10px;
     box-shadow: 0px 0px 10px black;
     padding: 10px;
+}
+
+.input {
+    border-radius: 5px;
+    height: 25px;
+    padding: 5px;
 }
 
 #texto {
@@ -40,6 +47,10 @@ header {
     margin-bottom: 100px;
     border: 1px solid black;
     padding: 10px;
+}
+
+td{
+    padding-right: 10px;
 }
 
 #texto > h2 {
@@ -53,30 +64,31 @@ header {
 }
 
 .input> input {
-    margin: 5px;
-}
-
-#nome {
-    margin-left: 6px;
-}
-
-#peso {
-    margin-left: 15px;
+    width: 70%;
 }
 
 #calcular {
     margin: auto;
     display: block;
     margin-top: 10px;
-    width: 100px;
+    background-color: #353434;
+    color: white;
+    border-radius: 5px;
+    width: 150px;
     height: 30px;
+}
+
+#calcular:hover{
+    background-color: #5a5656;
 }
 
 #resultado {
     background-color: black;
     color: white;
+    margin: auto;
     height: 100px;
-    padding: 5px;
+    width: 200px;
+    padding: 30px;
     text-align: justify;
     margin-top: 20px;
 }

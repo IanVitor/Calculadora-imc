@@ -28,18 +28,20 @@
             </div>
 
             <div id="container">
-                <div class="input">
-                        <label>Nome:</label>
-                        <input id="nome" type="text">
-                </div>
-                <div class="input">
-                    <label>Altura:</label>
-                    <input id="altura" type="number">
-                </div>
-                <div class="input">
-                    <label>Peso:</label>
-                    <input id="peso" type="number">
-                </div>
+                <table>
+                    <tr>
+                        <td><label>Nome:</label></td>
+                        <td><input class="input" id="nome" placeholder="Primeiro nome." maxlength="20" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Altura:</label></td>
+                        <td><input class="input" placeholder="1,80..." id="altura" type="number"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Peso:</label></td>
+                        <td><input class="input" placeholder="70,5..." id="peso" type="number"></td>
+                    </tr>
+                </table>
                 
                 <button id="calcular">Calcular</button>
                 <div id="resultado">
