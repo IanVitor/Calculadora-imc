@@ -1,6 +1,6 @@
 # Calculadora-imc
 
-<img src='./img/Conversor de moedas.png'>
+<img src="./src/Calculadora-imc.png">
  
 <p>
  Projeto para calcular o imc e ajudar as pessoas a ter uma vida mais saudável..
