@@ -1,63 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
     <title>Calculadora IMC</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-            <h1>
-                Calculadora IMC
-            </h1>
+      <h1>Calculadora IMC</h1>
     </header>
+
     <main>
-
-        <article>
-
-            <br>
-
-            <div id="texto">
-                <h2>Projeto IMC</h2>
-                <p>
-                    Este é meu primeiro projeto combinando HTML5, CSS3 e JavaScript. <br>
-                    Além de ajudar nos meus estudos, espero que o site consiga encorajar as pessoas a tomarem decisões mais saudáveis.
-                </p>
-            </div>
-
-            <div id="container">
-                <table>
-                    <tr>
-                        <td><label>Nome:</label></td>
-                        <td><input class="input" id="nome" placeholder="Primeiro nome." maxlength="20" type="text"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Altura:</label></td>
-                        <td><input class="input" placeholder="1,80..." id="altura" type="number"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Peso:</label></td>
-                        <td><input class="input" placeholder="70,5..." id="peso" type="number"></td>
-                    </tr>
-                </table>
-                
-                <button id="calcular">Calcular</button>
-                <div id="resultado">
-                
-                </div>
-            </div>
-
-        </article>
-    </main>
-    <footer>
-        <h3>Site feito por Ian Vitor</h3>
-    </footer>
-
-    <script src="script.js">
+      <section>
         
-    </script>
+        <div class="form-container">
+            <div class="input-container">
+                <label for="input" class="input-text">Nome*</label>
+                <input type="text" required maxlength="20" value="" placeholder="Primeiro nome" class="input nome-input ">
+            </div>
+            <div class="input-container">
+                <label for="input" class="input-text">Altura*</label>
+                <input type="number" placeholder="180 cm" class="input altura-input ">
+            </div>
+            <div class="input-container">
+                <label for="input" class="input-text">Peso*</label>
+                <input type="number" placeholder="00.0 kg" class="input peso-input ">
+            </div>
+        </div>
 
-</body>
+          <button id="calcular" onclick="checkUserData()">Calcular</button>
+          <div class="result hide" ><span></span></div>
+        </div>
+    </section>
+
+    </main>
+
+    <script src="scripts/script.js"></script>
+  </body>
 </html>
