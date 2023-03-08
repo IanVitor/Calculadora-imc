@@ -1,5 +1,5 @@
 <h1 align="center">
-    banner
+    <img alt="banner-Calculadora" src="./src/IMC-Calculator-banner.png">
 </h1>
 
 <div align="center">
