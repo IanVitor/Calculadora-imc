@@ -8,33 +8,36 @@
     <title>Calculadora IMC</title>
   </head>
   <body>
-    <header>
-      <h1>Calculadora IMC</h1>
-    </header>
 
     <main>
-      <section>
-        
-        <div class="form-container">
-            <div class="input-container">
-                <label for="input" class="input-text">Nome*</label>
-                <input type="text" required maxlength="20" value="" placeholder="Primeiro nome" class="input nome-input ">
-            </div>
-            <div class="input-container">
-                <label for="input" class="input-text">Altura*</label>
-                <input type="number" placeholder="180 cm" class="input altura-input ">
-            </div>
-            <div class="input-container">
-                <label for="input" class="input-text">Peso*</label>
-                <input type="number" placeholder="00.0 kg" class="input peso-input ">
-            </div>
-        </div>
+      <section id="img_container">
+        <img src="https://envision.app/wp-content/uploads/elementor/thumbs/Envision-character-strongman-weights-pm1wta5gq04l4r00hm1048kt1w81ywefwiw6ixwgsk.png" alt="Pessoa fazendo atividade física.">
+      </section>
+      <section id="content_container">
+        <h1 id="content_title">Calculadora - IMC</h1>
+        <div id="border_title"></div>
 
-          <button id="calcular" onclick="checkUserData()">Calcular</button>
-          <div class="result hide" ><span></span></div>
-        </div>
-    </section>
-
+        <form id="imc_form">
+          <div id="input_container">
+            <label for="peso">Peso em Kg</label>
+            <input type="text">
+          </div>
+          <div id="input_container">
+            <label for="altura">Altura em metros</label>
+            <input type="text">
+          </div>
+          <button>Calcular</button>
+        </form>
+        <aside id="result_container">
+          <div id="imc_result">
+            <h1>20,81</h1>
+            <p>seu imc</p>
+          </div>
+          <div id="imc_class">
+            <p>Você está no peso ideal.</p>
+          </div>
+        </aside>
+      </section>
     </main>
 
     <script src="scripts/script.js"></script>

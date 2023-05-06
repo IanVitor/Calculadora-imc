@@ -1,69 +1,58 @@
-const userName = document.querySelector(".nome-input");
+const form = document.querySelector("#imc_form");
 const height = document.querySelector(".altura-input");
 const weight = document.querySelector(".peso-input");
 const result = document.querySelector(".result span");
 const resultContainer = document.querySelector(".result ");
 
-function setImcData (height, weight) {
-    let imcClass = '';
+form.addEventListener("click", (e) =>{
+    e.preventDefault();
+    checkUserData();
+})
 
-    let imcResult = weight / ((height/100)**2).toFixed(1);
+function imcCalc (height, weight) {
+    let imc = {};
 
-    if(imcResult < 18.5){
-        imcClass = "abaixo do peso";
-    }else if(imcResult < 25){
-        imcClass = "Saúdavel";
-    }else if(imcResult < 30){
-        imcClass = "com sobrepeso";
-    }else if(imcResult < 35){
-        imcClass = "com Obesidade 1";
-    }else if(imcResult < 40){
-        imcClass = "com Obesidade 2";
+    imc.result = weight / ((height/100)**2).toFixed(1);
+
+    if(imc.result < 18.5){
+        imc.class = "abaixo do peso";
+    }else if(imc.result < 25){
+        imc.class = "Saúdavel";
+    }else if(imc.result < 30){
+        imc.class = "com sobrepeso";
+    }else if(imc.result < 35){
+        imc.class = "com Obesidade 1";
+    }else if(imc.result < 40){
+        imc.class = "com Obesidade 2";
     }else {
-        imcClass = "com Obesidade 3";
+        imc.class = "com Obesidade 3";
     };
 
-    return [imcClass, imcResult];
-}
-
-function checkUserData () {
-    
-    
-
-    if(userName.value === "") {
-        userName.classList.add("error");
-        result.innerText = 'Valor inválido, preencha todos os campos.'
-    }
-
-    if(height.value === "") {
-        height.classList.add("error");
-        result.innerText = 'Valor inválido, preencha todos os campos.'
-    }
-
-    if(weight.value === "") {
-        weight.classList.add("error");
-        result.innerText = 'Valor inválido, preencha todos os campos.'
-    }
-
-    if(userName.value !== "" && weight.value !== "" && height.value !== ""){
-        showImcData();
-    }
-
-    resultContainer.classList.remove("hide");
-    
-    setTimeout(throwError, 3000);
-    
-}
-
-function throwError() {
-    userName.classList.remove("error");
-    height.classList.remove("error");
-    weight.classList.remove("error");
+    return imc;
 }
 
 function showImcData () {
 
-    const data = setImcData(height.value, weight.value);
+    const data = imcCalc(height.value, weight.value);
 
-    result.innerText = `${userName.value}, seu IMC é de ${data[1].toFixed(2)} e você esta ${data[0]}.`;
+    result.innerText = `IMC é de ${data.result.toFixed(2)} e você esta ${data.class}.`;
+}
+
+function checkUserData () {
+
+    if(height.value === "" || weight.value === "") {
+        height.classList.add("error");
+        result.innerText = 'Valor inválido, preencha todos os campos.'
+    }
+
+    showImcData();
+
+    resultContainer.classList.remove("hide");
+    
+    setTimeout(throwError, 3000);
+}
+
+function throwError() {
+    height.classList.remove("error");
+    weight.classList.remove("error");
 }
