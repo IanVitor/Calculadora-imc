@@ -11,6 +11,7 @@
 body{
     background-color: #171717;
     font-family: 'Mulish', sans-serif;
+    position: relative;
 }
 
 main{
@@ -30,7 +31,6 @@ main{
 
 #content_container{
     max-width: 360px;
-    height: 60vh;
     margin: auto 0px;
     border-radius: 5px;
     background-color: #282828;
@@ -73,7 +73,14 @@ main{
     width: 90%;
     margin: 0 auto 1.5em;
     border: none;
+    color: #fdfdfd;
+    padding: 10px;
+    border-radius: 5px;
     background-color: #33333a;
+}
+
+#input_container > input:focus{
+    outline: 1px solid #51b055;
 }
 
 #imc_form > button{
@@ -89,20 +96,28 @@ main{
     transform: scale(1.05);
 }
 
-#result_container{
+.result_container{
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-around;
     width: 90%;
     margin: auto;
+    gap: 1em;
     padding-top: 10px;
     border-top: 1px solid #fdfdfd;
+}
+
+.result_container p{
+    overflow-wrap: break-word;
+    max-width: 250px;
 }
 
 #imc_result{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 50%;
 }
 
 #imc_result > h1{
@@ -115,16 +130,33 @@ main{
 
 #imc_class > p{
     font-size: .8em;
+    overflow-wrap: break-word;
 }
 
 .error{
-    border: 1px solid red;
+    border: 10px solid red;
     animation: kf_shake 0.3s 1 linear;
 }
 
-.hide
-{
-    display: none;
+footer{
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    width: 100%;
+    background-color: #33333a;
+    color: #fdfdfd;
+    display: flex;
+    justify-content: center;
+}
+
+#footer_link{
+    color: #fdfdfd;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#footer_link:hover{
+    color: #51b055;
 }
 
 @media (max-width: 800px){

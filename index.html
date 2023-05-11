@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="shortcut icon" href="src/icon.png" type="image/x-icon">
     <title>Calculadora IMC</title>
   </head>
   <body>
@@ -20,25 +21,23 @@
         <form id="imc_form">
           <div id="input_container">
             <label for="peso">Peso em Kg</label>
-            <input type="text">
+            <input id="weight_input" type="number">
           </div>
           <div id="input_container">
-            <label for="altura">Altura em metros</label>
-            <input type="text">
+            <label for="altura">Altura em cm</label>
+            <input id="height_input" type="number" >
           </div>
-          <button>Calcular</button>
+          <button onclick="checkUserData()">Calcular</button>
         </form>
-        <aside id="result_container">
-          <div id="imc_result">
-            <h1>20,81</h1>
-            <p>seu imc</p>
-          </div>
-          <div id="imc_class">
-            <p>Você está no peso ideal.</p>
-          </div>
+        <aside class="result_container">
+          
         </aside>
       </section>
     </main>
+
+    <footer>
+      <p>&copy;2023 <a id="footer_link" href="https://ianvitor.github.io/IanPortifolio/" target="_blank">Ian Vitor</a></p>
+    </footer>
 
     <script src="scripts/script.js"></script>
   </body>

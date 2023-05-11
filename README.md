@@ -3,7 +3,7 @@
 </h1>
 
 <div align="center">
-    <h3> 🟣 Descubra seu IMC facilmente! 🟣 </h3>
+    <h3> 🟢 Descubra seu IMC facilmente! 🟢 </h3>
 </div>
 
 ## Calculadora-IMC

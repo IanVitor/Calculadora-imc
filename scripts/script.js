@@ -1,48 +1,66 @@
 const form = document.querySelector("#imc_form");
-const height = document.querySelector(".altura-input");
-const weight = document.querySelector(".peso-input");
-const result = document.querySelector(".result span");
-const resultContainer = document.querySelector(".result ");
+const weight = document.querySelector("#weight_input");
+const height = document.querySelector("#height_input");
+const imcResult = document.querySelector("#imc_content span");
+const classResult = document.querySelector("#class_content span");
+const resultContent = document.querySelector("#result_content span");
+const resultContainer = document.querySelector(".result_container");
 
 form.addEventListener("click", (e) =>{
     e.preventDefault();
-    checkUserData();
 })
 
 function imcCalc (height, weight) {
     let imc = {};
 
     imc.result = weight / ((height/100)**2).toFixed(1);
+    imc.class = "Você está ";
 
     if(imc.result < 18.5){
-        imc.class = "abaixo do peso";
+        imc.class += "abaixo do peso";
     }else if(imc.result < 25){
-        imc.class = "Saúdavel";
+        imc.class += "Saúdavel";
     }else if(imc.result < 30){
-        imc.class = "com sobrepeso";
+        imc.class += "com sobrepeso";
     }else if(imc.result < 35){
-        imc.class = "com Obesidade 1";
+        imc.class += "com Obesidade 1";
     }else if(imc.result < 40){
-        imc.class = "com Obesidade 2";
-    }else {
-        imc.class = "com Obesidade 3";
+        imc.class += "com Obesidade 2";
+    }else if(imc.result >= 40) {
+        imc.class += "com Obesidade 3";
     };
 
     return imc;
 }
 
 function showImcData () {
-
     const data = imcCalc(height.value, weight.value);
 
-    result.innerText = `IMC é de ${data.result.toFixed(2)} e você esta ${data.class}.`;
+    resultContainer.innerHTML = `
+        <div id="imc_result">
+            <h1 id="imc_content"><span>${data.result.toFixed(2)}</span></h1>
+            <p id="result_content"><span>seu imc</span></p>
+        </div>
+        <div id="imc_class">
+            <p id="class_content"><span>${data.class}</span></p>
+        </div>
+    `
 }
 
 function checkUserData () {
 
     if(height.value === "" || weight.value === "") {
         height.classList.add("error");
-        result.innerText = 'Valor inválido, preencha todos os campos.'
+        weight.classList.add("error");
+        resultContainer.innerHTML = '<p>Valor inválido, preencha todos os campos.</p>';
+        return
+    }
+
+    if(height.value <= 0 || weight.value <= 0) {
+        height.classList.add("error");
+        weight.classList.add("error");
+        resultContainer.innerHTML = '<p>Ambos os valores devem ser maiores do que zero.</p>';
+        return
     }
 
     showImcData();
